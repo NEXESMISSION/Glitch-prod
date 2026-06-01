@@ -8,37 +8,34 @@ const onScroll = () => bar.classList.toggle("scrolled", window.scrollY > 12);
 onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
-/* ---------- Reels: tap to play, one at a time ---------- */
-const reels = document.querySelectorAll("[data-video]");
-function stopOthers(except) {
-  reels.forEach((r) => {
-    if (r === except) return;
-    const v = r.querySelector("video");
-    if (!v.paused) v.pause();
-    r.classList.remove("playing");
-  });
-}
-reels.forEach((reel) => {
-  const video = reel.querySelector("video");
-  reel.addEventListener("click", () => {
-    if (reel.classList.contains("playing")) {
-      video.pause();
-      reel.classList.remove("playing");
-      return;
-    }
-    stopOthers(reel);
-    video.muted = false;
-    video.currentTime = 0;
-    video.play().catch(() => {});
-    reel.classList.add("playing");
-  });
-  video.addEventListener("ended", () => reel.classList.remove("playing"));
-});
+/* ---------- Popup vidéo ---------- */
+const vlb = document.getElementById("vlb");
+const vlbVideo = document.getElementById("vlbVideo");
 
-/* ---------- Reveal on scroll (sections + tiles) ---------- */
+function openVideo(src) {
+  vlbVideo.src = src;
+  vlb.hidden = false;
+  document.body.style.overflow = "hidden";
+  vlbVideo.currentTime = 0;
+  vlbVideo.play().catch(() => {});
+}
+function closeVideo() {
+  vlbVideo.pause();
+  vlbVideo.removeAttribute("src");
+  vlbVideo.load();
+  vlb.hidden = true;
+  document.body.style.overflow = "";
+}
+document.querySelectorAll("[data-video]").forEach((reel) => {
+  reel.addEventListener("click", () => openVideo(reel.dataset.src));
+});
+document.getElementById("vlbClose").addEventListener("click", closeVideo);
+vlb.addEventListener("click", (e) => { if (e.target === vlb) closeVideo(); });
+
+/* ---------- Reveal on scroll (sections seulement) ---------- */
 const io = new IntersectionObserver(
   (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }),
-  { threshold: 0.06, rootMargin: "0px 0px -40px 0px" }
+  { threshold: 0.05, rootMargin: "0px 0px -40px 0px" }
 );
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
@@ -56,26 +53,26 @@ function buildGallery(items) {
   const frag = document.createDocumentFragment();
   items.forEach((it, i) => {
     const tile = document.createElement("button");
-    tile.className = "tile reveal";
+    tile.className = "tile";
     tile.dataset.brand = it.brand;
-    tile.style.transitionDelay = (i % 12) * 0.03 + "s";
     if (it.w && it.h) tile.style.aspectRatio = `${it.w} / ${it.h}`;
     tile.setAttribute("aria-label", `Agrandir la photo ${i + 1}`);
 
     const img = document.createElement("img");
-    img.src = "/" + it.file.replace(/^\//, "");
-    img.alt = `Glitch Prod — ${it.brand} ${i + 1}`;
     img.loading = "lazy";
     img.decoding = "async";
-    img.addEventListener("load", () => img.classList.add("loaded"));
-    if (img.complete) img.classList.add("loaded");
+    // visibilité robuste : montrer dès que chargé (ou en cache, ou en erreur)
+    const reveal = () => img.classList.add("loaded");
+    img.addEventListener("load", reveal);
+    img.addEventListener("error", reveal);
+    img.src = "/" + it.file.replace(/^\//, "");
+    if (img.complete && img.naturalWidth > 0) reveal();
     tile.appendChild(img);
 
     const entry = { src: img.src, brand: it.brand, el: tile };
     tile.addEventListener("click", () => openLightbox(entry));
     tiles.push(entry);
     frag.appendChild(tile);
-    io.observe(tile);
   });
   gallery.appendChild(frag);
   visible = tiles.slice();
@@ -94,7 +91,7 @@ document.querySelectorAll(".tab").forEach((tab) => {
   });
 });
 
-/* ---------- Lightbox (navigue dans le set filtré) ---------- */
+/* ---------- Lightbox photo (navigue dans le set filtré) ---------- */
 const lb = document.getElementById("lb");
 const lbImg = document.getElementById("lbImg");
 const lbCount = document.getElementById("lbCount");
@@ -123,7 +120,9 @@ document.getElementById("lbPrev").addEventListener("click", (e) => { e.stopPropa
 document.getElementById("lbNext").addEventListener("click", (e) => { e.stopPropagation(); show(pos + 1); });
 lb.addEventListener("click", (e) => { if (e.target === lb) closeLightbox(); });
 
+/* ---------- Clavier (photo + vidéo) ---------- */
 document.addEventListener("keydown", (e) => {
+  if (!vlb.hidden && e.key === "Escape") { closeVideo(); return; }
   if (lb.hidden) return;
   if (e.key === "Escape") closeLightbox();
   else if (e.key === "ArrowLeft") show(pos - 1);
