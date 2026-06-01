@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Glitch Prod — Portfolio</title>
-  <meta name="description" content="Glitch Prod — creative video & media. Sfax, Tunisia." />
-  <meta name="theme-color" content="#05050a" />
+  <title>Glitch Prod — Production Vidéo & Photo · Sfax</title>
+  <meta name="description" content="Glitch Prod — Production vidéo & photo pour les marques à Sfax. Reels, TikTok, publicités et shooting produits haute performance." />
+  <meta name="theme-color" content="#0b0b10" />
 
-  <meta property="og:title" content="Glitch Prod — Portfolio" />
-  <meta property="og:description" content="Creative video & media · Sfax" />
+  <meta property="og:title" content="Glitch Prod — Production Vidéo & Photo pour les Marques" />
+  <meta property="og:description" content="Contenus visuels haute performance · Sfax, Tunisie" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/poster1.jpg" />
+  <meta property="og:image" content="/images/brand/f01.jpg" />
 
   <link rel="icon" type="image/png" href="/images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,42 +19,78 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
+  <!-- Barre fixe -->
+  <header class="bar" id="bar">
+    <a href="#top" class="bar__brand">
+      <img src="/images/logo.png" alt="" class="bar__logo" />
+      <span class="bar__name">GLITCH<span class="accent">PROD</span></span>
+    </a>
+    <a href="https://wa.me/21656637236" class="bar__cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.04 8.04 0 0 1 2.37 5.73c0 4.48-3.64 8.1-8.1 8.1a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.06.8.82-2.98-.2-.31a8.08 8.08 0 0 1-1.24-4.3c0-4.47 3.64-8.1 8.12-8.1Z"/></svg>
+      <span>Discutons</span>
+    </a>
+  </header>
 
-  <main class="wrap">
-    <!-- Header -->
-    <header class="head">
-      <img src="/images/logo.png" alt="Glitch Prod logo" class="head__logo" />
-      <h1 class="head__name glitch" data-text="GLITCH PROD">GLITCH PROD</h1>
-      <p class="head__tag">Creative video &amp; media · Sfax</p>
-    </header>
-
-    <!-- Videos -->
-    <section class="reels">
-      <article class="reel" data-video>
-        <video src="/videos/video1.mp4" poster="/images/poster1.jpg" preload="none" playsinline loop muted></video>
-        <button class="reel__play" aria-label="Play video">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-      </article>
-
-      <article class="reel" data-video>
-        <video src="/videos/video2.mp4" poster="/images/poster2.jpg" preload="none" playsinline loop muted></video>
-        <button class="reel__play" aria-label="Play video">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </button>
-      </article>
+  <main id="top">
+    <!-- 1. HERO -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <h1 class="hero__title glitch" data-text="GLITCH PROD">GLITCH PROD</h1>
+      <h2 class="hero__tagline">Production Vidéo &amp; Photo pour les Marques à Sfax.</h2>
+      <p class="hero__body">Nous créons des contenus visuels haute performance (Reels, TikTok, Publicités) conçus pour capter l'attention, valoriser vos produits et convertir vos abonnés en clients.</p>
+      <a href="https://wa.me/21656637236" class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.04 8.04 0 0 1 2.37 5.73c0 4.48-3.64 8.1-8.1 8.1a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.06.8.82-2.98-.2-.31a8.08 8.08 0 0 1-1.24-4.3c0-4.47 3.64-8.1 8.12-8.1Z"/></svg>
+        Discuter de votre projet
+      </a>
     </section>
 
-    <!-- Contact -->
-    <footer class="foot">
-      <a href="https://wa.me/21656637236" class="foot__btn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.73 1.2h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7A9.82 9.82 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.04 8.04 0 0 1 2.37 5.73c0 4.48-3.64 8.1-8.1 8.1a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.06.8.82-2.98-.2-.31a8.08 8.08 0 0 1-1.24-4.3c0-4.47 3.64-8.1 8.12-8.1Zm4.45 11.5c-.24-.12-1.44-.71-1.66-.79-.22-.08-.39-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.95-1.2-.72-.64-1.2-1.43-1.35-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.7 2.6 4.12 3.65.58.25 1.02.4 1.37.51.58.18 1.1.16 1.51.1.46-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg>
-        Get in touch
-      </a>
-      <p class="foot__loc">© <span id="year"></span> Glitch Prod · Sfax, Tunisia</p>
-    </footer>
+    <!-- 2. PORTFOLIO VIDÉO -->
+    <section class="sec reveal" id="work">
+      <h2 class="sec__title">Nos Réalisations Vidéo</h2>
+      <div class="reels">
+        <div class="reel" data-video>
+          <video src="/videos/video2.mp4" poster="/images/poster2.jpg" preload="none" playsinline loop muted></video>
+          <button class="reel__play" aria-label="Lire la vidéo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <div class="reel" data-video>
+          <video src="/videos/video1.mp4" poster="/images/poster1.jpg" preload="none" playsinline loop muted></video>
+          <button class="reel__play" aria-label="Lire la vidéo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. GRILLE PHOTO -->
+    <section class="sec reveal">
+      <h2 class="sec__title">Nos Réalisations Photo</h2>
+      <div class="tabs" id="tabs" role="tablist">
+        <button class="tab is-active" data-filter="all" role="tab">Tout</button>
+        <button class="tab" data-filter="softandwarm" role="tab">Soft &amp; Warm</button>
+        <button class="tab" data-filter="bandekha" role="tab">Bandekha Sportswear</button>
+      </div>
+      <div class="gallery" id="gallery" aria-label="Galerie photo"></div>
+    </section>
+
+    <!-- 4. CONVERSION -->
+    <section class="cta-block reveal">
+      <h3 class="cta-block__title">Prêt à booster l'image de votre marque ?</h3>
+      <p class="cta-block__body">Chaque projet a ses propres exigences techniques. Expliquez-nous vos besoins et nous concevons un concept visuel sur mesure.</p>
+      <a href="https://wa.me/21656637236" class="btn btn--primary btn--lg" target="_blank" rel="noopener">Lancer mon projet 🚀</a>
+    </section>
   </main>
+
+  <footer class="foot">
+    <img src="/images/logo.png" alt="Glitch Prod" class="foot__logo" />
+    <p class="foot__loc">© <span id="year"></span> Glitch Prod · Sfax, Tunisie · Téléphone : <a href="tel:+21656637236">56 637 236</a></p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb" hidden>
+    <button class="lb__close" id="lbClose" aria-label="Fermer">&times;</button>
+    <button class="lb__nav lb__prev" id="lbPrev" aria-label="Précédent">&#8249;</button>
+    <img class="lb__img" id="lbImg" alt="" />
+    <button class="lb__nav lb__next" id="lbNext" aria-label="Suivant">&#8250;</button>
+    <span class="lb__count" id="lbCount"></span>
+  </div>
 
   <script src="/script.js"></script>
 </body>
