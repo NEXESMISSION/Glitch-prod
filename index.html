@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glitch Prod — Creative Video & Media Agency · Sfax</title>
+  <meta name="description" content="Glitch Prod is a creative video & media agency based in Sfax, Tunisia. Cinematic videography, reels and brand content that makes you stand out." />
+  <meta name="theme-color" content="#05050a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Glitch Prod — Creative Video & Media Agency" />
+  <meta property="og:description" content="Cinematic videography & content from Sfax, Tunisia." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/images/poster1.jpg" />
+
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand" aria-label="Glitch Prod home">
+      <img src="/images/logo.png" alt="" class="nav__logo" />
+      <span class="nav__name">GLITCH<span class="accent">PROD</span></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav__cta">Let's talk</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Creative Video &amp; Media Agency · Sfax, Tunisia</p>
+      <h1 class="hero__title glitch" data-text="GLITCH PROD">GLITCH PROD</h1>
+      <p class="hero__tagline">
+        We turn moments into cinema. <span class="ar">تستحق شكون يصوّرلك</span>
+      </p>
+      <p class="hero__sub">
+        Reels, brand films and visual stories crafted to make you impossible to scroll past.
+      </p>
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary">View our work</a>
+        <a href="#contact" class="btn btn--ghost">Start a project</a>
+      </div>
+    </div>
+    <a href="#work" class="hero__scroll" aria-label="Scroll to work">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>CINEMATIC REELS</span><span>•</span><span>BRAND FILMS</span><span>•</span>
+      <span>EVENT COVERAGE</span><span>•</span><span>SOCIAL CONTENT</span><span>•</span>
+      <span>COLOR GRADING</span><span>•</span><span>STORYTELLING</span><span>•</span>
+      <span>CINEMATIC REELS</span><span>•</span><span>BRAND FILMS</span><span>•</span>
+      <span>EVENT COVERAGE</span><span>•</span><span>SOCIAL CONTENT</span><span>•</span>
+      <span>COLOR GRADING</span><span>•</span><span>STORYTELLING</span><span>•</span>
+    </div>
+  </div>
+
+  <!-- Work -->
+  <section class="work" id="work">
+    <div class="section-head reveal">
+      <span class="section-head__tag">01 — Selected Work</span>
+      <h2 class="section-head__title">Footage we filmed</h2>
+      <p class="section-head__desc">Real projects, real cameras, real grade. Tap any clip to watch.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card reveal">
+        <div class="card__video" data-video>
+          <video
+            src="/videos/video1.mp4"
+            poster="/images/poster1.jpg"
+            preload="none"
+            playsinline
+            loop
+            muted
+          ></video>
+          <button class="card__play" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <span class="card__sound" hidden aria-hidden="true">Tap for sound</span>
+        </div>
+        <div class="card__meta">
+          <h3>Street Cinematic</h3>
+          <p>Sfax · Gimbal · Color grade</p>
+        </div>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__video" data-video>
+          <video
+            src="/videos/video2.mp4"
+            poster="/images/poster2.jpg"
+            preload="none"
+            playsinline
+            loop
+            muted
+          ></video>
+          <button class="card__play" aria-label="Play video">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </button>
+          <span class="card__sound" hidden aria-hidden="true">Tap for sound</span>
+        </div>
+        <div class="card__meta">
+          <h3>Brand Story</h3>
+          <p>Sfax · Cinematic · Social cut</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- About / Stats -->
+  <section class="about" id="about">
+    <div class="about__grid">
+      <div class="about__text reveal">
+        <span class="section-head__tag">02 — Who we are</span>
+        <h2>We are <span class="accent">Glitch Prod</span>.</h2>
+        <p>
+          A creative video &amp; media studio born in Sfax. We shoot, edit and grade
+          content that moves — from fast cinematic reels to full brand films.
+          If it deserves to be seen, we make sure it can't be ignored.
+        </p>
+        <p>
+          You deserve someone who knows how to film you the right way.
+          That's exactly what we do.
+        </p>
+      </div>
+      <div class="about__stats reveal">
+        <div class="stat"><strong>4K</strong><span>Cinematic capture</span></div>
+        <div class="stat"><strong>24h</strong><span>Fast turnaround</span></div>
+        <div class="stat"><strong>100%</strong><span>Custom grade</span></div>
+        <div class="stat"><strong>Sfax</strong><span>&amp; beyond</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact__inner reveal">
+      <span class="section-head__tag">03 — Let's create</span>
+      <h2>Got something worth filming?</h2>
+      <p>Tell us about your project. We reply fast.</p>
+      <div class="contact__actions">
+        <a href="https://wa.me/21656637236" class="btn btn--primary" target="_blank" rel="noopener">
+          WhatsApp · 56 637 236
+        </a>
+        <a href="tel:+21656637236" class="btn btn--ghost">Call us</a>
+      </div>
+      <p class="contact__loc">📍 Sfax, Tunisia</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <img src="/images/logo.png" alt="Glitch Prod" class="footer__logo" />
+    <p>© <span id="year"></span> Glitch Prod · Sfax, Tunisia</p>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
